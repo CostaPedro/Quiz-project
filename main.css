@@ -1,2 +1,57 @@
+* {
+    box-sizing: border-box;
+}
+body {
+	background-color: ‎#FFFACD;
+	margin: auto; 
+  	font-family: "Roboto", sans-serif;
+}
 
+header {
+	padding:40px;
+	margin-left: auto;
+	margin-right: auto;
+}
 
+h1 {
+	text-align: center;
+}
+div.content, div.questions {
+
+	background-color: white;
+	width:400px;
+	padding:auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*div.questions {
+	background-color: white;
+	width:400px;
+	padding:auto;
+	margin-left: auto;
+	margin-right: auto;
+}*/
+
+h2 {
+	text-align: center;
+}
+
+.button-label {
+  	background-color: #5A72DD;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 30px;
+    margin: auto;
+    cursor: pointer;
+    border-radius:0px;
+}
+
+p.math-class {
+	font-size:45px;
+	font-style: bold;
+}

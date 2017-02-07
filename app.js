@@ -7,7 +7,7 @@ var state = {
   score: 0,
   items: [
     {
-      question: '9+4',
+      question: '9+4=',
       answers: [
         { 
           text: 10,
@@ -32,7 +32,7 @@ var state = {
       ],
     },
     {
-      question: '19-7',
+      question: '19-7=',
       answers: [
         { 
           text: 110000,
@@ -57,7 +57,7 @@ var state = {
       ]
     },
     {
-      question: '15-2',
+      question: '15-2=',
       answers: [
         { 
           text: 2,
@@ -82,7 +82,7 @@ var state = {
       ]
     },
     {
-      question: '12+5',
+      question: '12+5=',
       answers: [
         { 
           text: 17,
@@ -107,7 +107,7 @@ var state = {
       ]
     },
     {
-      question: '9+6',
+      question: '9+6=',
       answers: [
         { 
           text: 2,
@@ -126,7 +126,7 @@ var state = {
           correct: false,
         },
         { 
-          text: 'cannot be solved.',
+          text: 10,
           correct: false,
         },
       ]
@@ -142,7 +142,7 @@ var state = {
 
 function start(){
 
-$(".start-page").click (function () {
+$(".start").click (function () {
     event.preventDefault();
     console.log('working-start-button');
     renderQuestion();
@@ -160,11 +160,10 @@ var renderQuestion = function () {
     $('.start-page').remove();
 
 
-
-
-var questionText =  '<div class="questions">'+
-                    '<div class="updated-score">'+ ' Your score so far is:  ' + state.score + ' correct response(s) out of:  '+ state.currentQuestion +' question(s).'+'</div>'+
-                    '<p>'+ state.items[state.currentQuestion].question + '</p>' +
+var displayScore =  '<div class="questions">'+
+                    '<div class="updated-score">'+ ' Your score so far is:  ' + state.score + ' correct response(s) out of:  '+ state.currentQuestion +' question(s).'+'</div>';
+                    
+var questionText =  '<p class="math-question">'+ state.items[state.currentQuestion].question + '</p>' +
                     '<form class="options">'+
                     '<input class="option" type="radio" name="question1" value=0>' + state.items[state.currentQuestion].answers[0].text + '<br>'+
                     '<input class="option" type="radio" name="question1" value=1>' + state.items[state.currentQuestion].answers[1].text + '<br>'+
@@ -175,7 +174,17 @@ var questionText =  '<div class="questions">'+
                     '</form>'+
                     '</div>';
 
+        
+
+
+    console.log(state.currentQuestion);
+    if (state.currentQuestion>0) {
+    $('.score').html(displayScore);
+  }
+
+
     $('.content').html(questionText);
+    
 
 };
 
