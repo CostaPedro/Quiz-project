@@ -152,7 +152,9 @@ $(".start").click (function () {
 
 start();
 
-
+function resetPage() {
+    location.reload();
+}
 
 
 var renderQuestion = function () {
@@ -170,7 +172,8 @@ var questionText =  '<p class="math-question">'+ state.items[state.currentQuesti
                     '<input class="option" type="radio" name="question1" value=2>' + state.items[state.currentQuestion].answers[2].text + '<br>'+
                     '<input class="option" type="radio" name="question1" value=3>' + state.items[state.currentQuestion].answers[3].text + '</br>'+
                     '<input class="option" type="radio" name="question1" value=4>' + state.items[state.currentQuestion].answers[4].text + '</br>'+
-                    '<input type="button" id="next" value="Next" onlick="sum_values()">'+
+                    '<input class="next" type="button" id="next" value="Next">'+
+                    '<input class="reset" type="button" id="reset" value="Restart">'+
                     '</form>'+
                     '</div>';
 
@@ -188,6 +191,13 @@ var questionText =  '<p class="math-question">'+ state.items[state.currentQuesti
 
 };
 
+
+$(".content").on('click','#reset', function () {
+    event.preventDefault();
+    console.log('working-reset-button');
+    resetPage();
+       
+    });
 
 $(".content").on('click','#next', function () {
     event.preventDefault();
